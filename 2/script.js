@@ -30,7 +30,6 @@ function thirdLeastItem(array) {
         return;
     }
     var out = [];
-
     if (array[1] > array[0]) {
         out[0] = array[0];
         out[1] = array[1];
@@ -68,10 +67,11 @@ function thirdLeastItem(array) {
     return out[2];
 }
 
-var t1 = [1, 5, 3, 6];
-var t2 = [5, 6, 3, 4, 5];
-var t3 = [6, 3, 7, 1, 0, 9, 4];
-//console.log(thirdLeastItem(t1));
-//console.log(thirdLeastItem(t2));
+var t1 = [1, 1,1];
+var t2 = [1, 1, 2];
+var t3 = [1, 3, 2];
+var t4 = [];
+console.log(thirdLeastItem(t1));
+console.log(thirdLeastItem(t2));
 console.log(thirdLeastItem(t3));
-
+console.log(thirdLeastItem(t4));
