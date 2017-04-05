@@ -1,0 +1,14 @@
+local storage
+write a module, which works with local stolrage
+module should return {
+    get: function(key)
+    getAll: function() return [{key:value}, {key:value}]
+    set: function(key, value)
+    remove: function(key)
+    clear: function() //remove all
+    add: function([{key:value}, {key:value}])
+}
+
+local storage saves all in strings so i should use:
+JSON.parse
+JSON.stringify
