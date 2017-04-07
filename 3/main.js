@@ -1,5 +1,5 @@
 var storageModule = (function() {
-    if (typeof(Storage) !== 'undefined') {
+    if (localStorage) {
         return {
             add: function (array) {
                 for (var i = 0; i < array.length; i++) {
