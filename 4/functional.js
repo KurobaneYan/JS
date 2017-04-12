@@ -1,3 +1,4 @@
+{
 function Kingdom(kingdomName, isSimple, isAutotroph) {
     this.kingdomName = kingdomName;
     this.isSimple = isSimple;
@@ -55,3 +56,4 @@ let pagurusBernhardus = new Species('Animalla', false, false, 'Malacostraca', 'P
 
 pagurusBernhardus.setLifeSpan(11);
 console.log(pagurusBernhardus.getInfo());
+}
