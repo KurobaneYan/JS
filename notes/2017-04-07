@@ -1,0 +1,39 @@
+Object methods
+functions have this too
+this is a context which creates on call
+this
+(obj.go)() //function
+(obj.go || obj.stop)() //undefined
+
+pattern Chaining
+var ladder = {
+    step: 0,
+    up: function() {
+        this.step++;
+        return this;
+    },
+    down: function() {
+        this.step--;
+        return this;
+    },
+    showStep: function() {
+        console.log(step);
+        return this;
+    }
+}
+
+object-conversion
+var value = new Boolean(false);
+if (value) {
+    alert(true);
+}
+
+alert([]==[]); //false
+alert([]==![]); //true
+
+JS singleton
+{}
+
+constructor
+every function is a constructor
+

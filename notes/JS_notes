@@ -1,0 +1,33 @@
+// 
+function (foo) {
+    return foo && foo.bar;
+}
+
+// Check in empty:
+if (!array.length) {
+    console.log(array.length)
+}
+
+// Default args in ES5:
+function setPosition (x, y) {
+    x = x || 0;
+    y = y || 0;
+    console.log(x, y);
+}
+
+// Default args in ES6:
+function setPosition(x = 0, y = 0) {
+    console.log(x, y);
+}
+
+// Function Declaration
+function f() {}
+
+// Function Expression
+var func = function() {}
+
+// Named function expression
+var f = function sayHi() {}
+
+//
+var returnObject = () => ({});

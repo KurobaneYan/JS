@@ -1,0 +1,86 @@
+'use strict'
+function b() {
+    // should show window without 'use strict'
+    console.log(this);  // undefined with 'use strict'
+}
+
+functional style oop:
+private fields don't inherete by new class
+protected starts with _, but it's not a good idea, it's only convension
+example: this._protectedField
+
+function Auto() {
+    this.speed;
+}
+
+function Truck(power) {
+    Auto.call(this);
+
+    this.getPower = function() {
+        return power;
+    };
+}
+
+or
+
+function Auto(power) {
+    this._power = power;
+    this.showPower = function() {
+        console.log(this._power);
+    }
+}
+
+function Truck(power) {
+    Auto.apply(this, arguments); //inheritence
+    // or Auto.call(this, power);
+
+    console.log(this._power);
+
+    // overiding
+    var parentShowPower = this.showPower;
+    this.showPower = function() {
+        parentEnable.call(this);
+        // do something else
+    }
+    
+}
+
+disabvanteges:
+- use lots of memory(each class locates memory for it's methods and properties)
+
+
+Object prototype:
+
+var animal = {
+    eats: true
+};
+
+var rabbit = {
+    jumps: true
+};
+
+rabbit.__proto__ = animal;
+
+prototype works only on read, so you can't delete parent's property
+
+obj.hasOwnProperty(prop)
+
+to create object without _proto__, all properties and methods:
+Object.create(null)
+
+prototype for initialising __proto__ in constructor function:
+var animal = {
+    eats: true
+};
+
+function Rabbit(name) {
+    this.name = name;
+}
+
+Rabbit.prototype = animal; // doesn't do anything if we don't call new Rabbit()
+var rabbit = new Rabbit("King");
+console.log(rabbit.eats) // true
+
+in prototype we have a constructor, which is just link to function itself
+
+all inheretence starts from Object.prototype
