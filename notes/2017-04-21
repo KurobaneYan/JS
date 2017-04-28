@@ -1,0 +1,13 @@
+it's better to use native js
+
+location hash
+
+JQuery based on Sizzle
+cache DOM selection
+chaining .end()
+
+it will be faster to detach elements when you want to delete everything
+or empty to dispose of the element's innerHtml
+
+JQuery selector returns wrapper, which are not equal to each other
+$ prefix is used to indicates that you are working with wrapper, not a DOM element

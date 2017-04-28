@@ -1,0 +1,7 @@
+SPA single page application
+window.onhashchange
+
+Client Routing:
+page.js
+crossroads/js
+navigo.js
