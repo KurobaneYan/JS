@@ -1,0 +1,66 @@
+Render Tree - tree, used for render, looks like DOM.
+For every element it saves:
+    position(perent)
+    width and heigth
+    calculated style properties
+    raster element(renders with GPU)
+    raster branches
+
+animation frame(runs 60 times per second)
+
+1. render tree build
+    build render tree from DOM and CSSOM
+
+2. layout(flow)
+    calculate sizes and coordinates
+
+3. paint(style)
+    create raster elements and raster branches
+    drawing elements
+
+4. composite 
+    calculate layers and render them
+    owerlay main element on body
+    runs in GPU
+    performance depends on bus between CPU and GPU(can runs slowly on mobiles)
+
+
+when page is changed
+1. render tree invalidation
+    marks with 'recalculate' elements, which shoulds be recalculated
+    merks with 'redraw'
+    resources depends on amount of elements and depth of a DOM tree
+
+2. layout
+    works only on elements with 'recalculate' if elements changed:
+        calculate new sizes
+        marks with 'redraw'
+    remove all 'recalculate' marks
+    add new 'redraw' or 'changed' marks
+    Resources depends on amount of elements
+    can be optimised by:
+        grouping changes
+        make all elements absolute or fixed
+
+3. paint
+    for elements marked with 'paint'
+    redraw them and remove 'paint' marks
+    it removes all 'paint' marks
+
+4. composite
+    Performance depends on bus between GPU and CPU
+    
+    optimisation:
+        send element on other GPU layer for animate, example:
+            transform: translateZ(0);
+            will-change: transform;
+        try to animate only transform, opacity, filter
+
+html tags wich uses gpu:
+canva
+video
+
+
+style.display='none' removes element from render tree 
+
+render tree contains 
