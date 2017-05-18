@@ -1,0 +1,28 @@
+Kendo UI
+custom editor
+for model binding cascadeForm
+
+MVVM:
+    we don't edit view directly,
+    it changes with data, because of bindings
+
+MVVM:
+var viewModel = kendo.observable({
+    name: "John Doe",
+    displayGreeting: funciton() {
+        var name = this.get("name");
+        alert("Hello, " + name + " !!!");
+    },
+    setName: function(name) {
+        this.set('name', name);
+    }
+});
+
+ERRORS:
+    this.name;
+    var viewmodel = {...};
+    this.name = 'new Name';
+
+look in examples:
+    mvvm/source
+    remote source
